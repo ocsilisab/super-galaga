@@ -21,7 +21,6 @@ let enemyGenerator = setInterval(createEnemy, 2000)
 window.addEventListener('keydown', (e) => {
   switch(e.key){
     case 'a':
-      console.log(e.key)
       player.direction = -1
       break
     case 'd':

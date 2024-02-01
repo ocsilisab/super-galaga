@@ -24,6 +24,29 @@ class Bullet{
   move(){
     this.y -= this.speed
     this.sprite.style.top = this.y + 'px'
-    
+    this.checkCollision()
+    if(this.y <= -10){
+      this.removeBullet()
+    }
+  }
+  removeBullet(){
+    this.parent.removeChild(this.sprite)
+    clearInterval(this.timerId)
+    this.bullets = this.bullets.filter(bullet => {
+      return bullet !== this.sprite
+    })
+  }
+  checkCollision(){
+    this.enemies.forEach((enemy, i) => {
+      if( this.x < (enemy.x + enemy.width) &&
+          (this.x + this.width) > enemy.x &&
+          this.y < (enemy.y + enemy.height) &&
+          this.y + this.height > enemy.y
+          ){
+            enemy.removeEnemy()
+            this.removeBullet()
+            this.enemies.splice(i, 1)
+          }
+    })
   }
 }

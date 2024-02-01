@@ -21,7 +21,6 @@ class Enemy{
     newEnemy.style.left = this.x + 'px'
     this.parent.appendChild(newEnemy)
     this.sprite = newEnemy
-    console.log(this.sprite)
   }
   move(){
     this.y += this.speed
