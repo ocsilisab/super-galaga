@@ -5,9 +5,12 @@ class Bullet{
     this.parent = parent
     this.enemies = enemies
     this.bullets = bullets
+    this.speed = 10
     this.width = 10
     this.height = 10
     this.sprite
+    this.timerId
+    this.move = this.move.bind(this)
   }
 
   insertBullet(){
@@ -17,5 +20,10 @@ class Bullet{
     newBullet.style.left = this.x + 'px'
     this.parent.appendChild(newBullet)
     this.sprite = newBullet
+  }
+  move(){
+    this.y -= this.speed
+    this.sprite.style.top = this.y + 'px'
+    
   }
 }

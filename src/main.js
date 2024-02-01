@@ -31,7 +31,7 @@ window.addEventListener('keydown', (e) => {
       let newBullet = new Bullet(player.x + 20, 735, board, enemies, bullets)
       newBullet.insertBullet()
       bullets.push(newBullet)
-      
+      newBullet.timerId = setInterval(newBullet.move, 100)
   }
 })
 
