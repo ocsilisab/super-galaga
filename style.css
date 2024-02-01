@@ -1,0 +1,15 @@
+#main-board {
+  width: 500px;
+  height: 800px;
+  background-color: black;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#player {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: absolute;
+}
