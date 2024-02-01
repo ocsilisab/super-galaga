@@ -4,6 +4,8 @@ class Player {
     this.y = y
     this.parent = parent
     this.direction = 0
+    this.width = 50
+    this.height = 50
     this.speed = 5
     this.sprite
   }
