@@ -43,7 +43,7 @@ class Enemy{
         (this.x + this.width) > this.player.x &&  
         this.y < (this.player.y + this.player.height) &&
         (this.y + this.height) > this.player.y){
-          alert('GAME OVER')
+          this.player.isDead = true
         }
   }
 }

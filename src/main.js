@@ -4,6 +4,7 @@ let player = new Player(255, 750, board)
 player.insertPlayer()
 
 let enemies = []
+let bullets = []
 
 function createEnemy(){
   let randomX = Math.floor(Math.random() * 450)
@@ -26,6 +27,11 @@ window.addEventListener('keydown', (e) => {
     case 'd':
       player.direction = 1
       break
+    case ' ': 
+      let newBullet = new Bullet(player.x + 20, 735, board, enemies, bullets)
+      newBullet.insertBullet()
+      bullets.push(newBullet)
+      
   }
 })
 
@@ -39,4 +45,12 @@ let timerId = setInterval(playerMovement, 24)
 
 function playerMovement(){
   player.move()
+  if(player.isDead === true){
+    alert('GAME OVER')
+    clearInterval(timerId)
+    clearInterval(enemyGenerator)
+      enemies.forEach((enemy) => {
+        enemy.removeEnemy()
+      })
+  }
 }

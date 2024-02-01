@@ -8,6 +8,7 @@ class Player {
     this.height = 50
     this.speed = 5
     this.sprite
+    this.isDead = false
   }
   insertPlayer(){
     let newPlayer = document.createElement('div')
