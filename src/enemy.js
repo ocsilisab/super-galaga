@@ -11,7 +11,7 @@ class Enemy{
     this.sprite
     this.timerId
 
-    this.move = this.move.bind(this)
+    //this.move = this.move.bind(this)
   }
 
   insertEnemy(){

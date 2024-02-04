@@ -10,7 +10,7 @@ class Bullet{
     this.height = 10
     this.sprite
     this.timerId
-    this.move = this.move.bind(this)
+    //this.move = this.move.bind(this)
   }
 
   insertBullet(){

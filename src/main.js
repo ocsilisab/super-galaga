@@ -11,7 +11,7 @@ function createEnemy(){
   let enemy = new Enemy(randomX, -50, board, player, enemies)
   enemy.insertEnemy()
   enemies.push(enemy)
-  enemy.timerId = setInterval(enemy.move, 100)
+  enemy.timerId = setInterval(() => {enemy.move()}, 100)
 }
 
 let enemyGenerator = setInterval(createEnemy, 2000)
@@ -30,7 +30,7 @@ window.addEventListener('keydown', (e) => {
       let newBullet = new Bullet(player.x + 20, 735, board, enemies, bullets)
       newBullet.insertBullet()
       bullets.push(newBullet)
-      newBullet.timerId = setInterval(newBullet.move, 100)
+      newBullet.timerId = setInterval(newBullet.move.bind(newBullet), 100)
   }
 })
 
